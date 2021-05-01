@@ -8,7 +8,9 @@ const {
 } = require("./section-a.js");
 
 // Section A 01. Wrtite a smoke test
-
+test('Smoke test to ensure that tests work', () => {
+    expect(3*2).toBe(6);
+});
 // Section A 02. Test the subtraction() function
 // Feel free to delete all of the starter test block and make it better
 
