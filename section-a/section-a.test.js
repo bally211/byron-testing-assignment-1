@@ -14,12 +14,9 @@ test('Smoke test to ensure that tests work', () => {
 // Section A 02. Test the subtraction() function
 // Feel free to delete all of the starter test block and make it better
 
-describe('Test the ', () => {
-    test("Subtract 2 positive numbers, where the first parameter is larger than the scond one", () => {
-        let num1 = 5;
-        let num2 = 1;
-        var expected = 4;
-        var output = subtract(num1, num2);
+describe('Testing the subtract fucntion', () => {
+    it('Should subtract a smaller number from a larger number and give the correct answer', () => {
+        expect(subtract(4,2)).toBe(2);
     });
 });
 
