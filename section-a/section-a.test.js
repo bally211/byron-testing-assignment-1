@@ -36,9 +36,13 @@ describe('Testing the subtract fucntion', () => {
 // Section A 03. Test the divide() function
 // Feel free to delete all of the starter test block and make it better
 
-it('Should divide numbers and not allow division by 0', () => {
+describe('Testing the divide function', () => {
+    it('Should divide a larger number by a smaller number that will provide a whole answer', () => {
+        expect(divide(4,2)).toEqual(2);
+    });
 
 });
+
 
 // Section A 04. Test the isDivisibleBy() function
 
