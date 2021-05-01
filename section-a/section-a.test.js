@@ -17,6 +17,19 @@ test('Smoke test to ensure that tests work', () => {
 describe('Testing the subtract fucntion', () => {
     it('Should subtract a smaller number from a larger number and give the correct answer', () => {
         expect(subtract(4,2)).toBe(2);
+        expect(subtract(10,7)).toBe(3);
+    });
+    it('Should subtract a larger number from a smaller number and give the correct negative number as an answer', () => {
+        expect(subtract(2,4)).toBe(-2);
+        expect(subtract(7,10)).toBe(-3);
+    });
+    it('Should subtract a negative number and provide a the correct answer', () => {
+        expect(subtract(-2,-4)).toBe(2);
+        expect(subtract(7,-10)).toBe(17);
+    });
+    it('Should subtract from a positive number from a negative number and give the correct answer', () => {
+        expect(subtract(-2,4)).toBe(-6);
+        expect(subtract(-7,10)).toBe(-17);
     });
 });
 
