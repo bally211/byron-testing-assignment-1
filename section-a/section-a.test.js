@@ -12,7 +12,6 @@ test('Smoke test to ensure that tests work', () => {
     expect(3*2).toBe(6);
 });
 // Section A 02. Test the subtraction() function
-// Feel free to delete all of the starter test block and make it better
 
 describe('Testing the subtract fucntion', () => {
     it('Should subtract a smaller number from a larger number and give the correct answer', () => {
@@ -34,7 +33,6 @@ describe('Testing the subtract fucntion', () => {
 });
 
 // Section A 03. Test the divide() function
-// Feel free to delete all of the starter test block and make it better
 
 describe('Testing the divide function', () => {
     it('Should divide a larger number by a smaller number that will provide a whole answer', () => {
@@ -52,6 +50,41 @@ describe('Testing the divide function', () => {
 
 
 // Section A 04. Test the isDivisibleBy() function
+
+describe('Testting the isDivisibleBy function', () => {
+    it('Should be truthy when the number provided is divisible by both a and b', () => {
+        expect(isDivisibleBy(10,2,5)).toBeTruthy();
+        expect(isDivisibleBy(2000,40,100)).toBeTruthy();
+    });
+    it('Should be falsy when the number provided is not divisible by a, but is divisible by b', () => {
+        expect(isDivisibleBy(10,3,2)).toBeFalsy();
+        expect(isDivisibleBy(2000,648,40)).toBeFalsy();
+    });
+    it('Should be falsy when the number provided is not divisible by b, but is divisible by a', () => {
+        expect(isDivisibleBy(10,2,6)).toBeFalsy();
+        expect(isDivisibleBy(2000,40,732)).toBeFalsy();
+    });
+    it('Should be falsy when the number provided is not divisible by both a and b', () => {
+        expect(isDivisibleBy(10,6,3)).toBeFalsy();
+        expect(isDivisibleBy(2000,648,732)).toBeFalsy();
+    });
+    it('Should be falsy if the number provided is not a number', () => {
+        expect(isDivisibleBy('Hello',10,15)).toBeFalsy();
+        expect(isDivisibleBy(true,2,4)).toBeFalsy();
+    });
+    it('Should be falsy if the a provided is not a number', () => { //this fails as the funtion doesn't check the input type and if one of the denominators is a true boolean value then it will output as truthy rather than falsy, can be fixed by changing the function 
+        expect(isDivisibleBy(100,'Hello',10)).toBeFalsy();
+        expect(isDivisibleBy(8,true,4)).toBeFalsy();
+    });
+    it('Should be falsy if the a provided is 0', () => {
+        expect(isDivisibleBy(100,0,10)).toBeFalsy();
+        expect(isDivisibleBy(8,0,4)).toBeFalsy();
+    });
+    it('Should be falsy if the b provided is 0', () => {
+        expect(isDivisibleBy(100,10,0)).toBeFalsy();
+        expect(isDivisibleBy(8,4,0)).toBeFalsy();
+    });
+});
 
 // Section A 05. Test the areaOrPerimeter() function
 
