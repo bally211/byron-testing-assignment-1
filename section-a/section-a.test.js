@@ -112,6 +112,38 @@ describe('Testing the areaOrPerimeter function', () => {
 
 // Section A 06. Test the gradeAssignment() function
 
+describe('Testing the gradeAssignment function', () => {
+    it('Should return A when q is greater than or equal to 90', () => {
+        expect(gradeAssignment(91,92,93)).toBe("A");
+        expect(gradeAssignment(95,85,91)).toBe("A");
+        expect(gradeAssignment(90,90,90)).toBe("A");
+    });
+    it('Should return B when q is greater than or equal to 80, but less than 90', () => {
+        expect(gradeAssignment(81,82,83)).toBe("B");
+        expect(gradeAssignment(85,75,81)).toBe("B");
+        expect(gradeAssignment(80,80,80)).toBe("B");
+    });
+    it('Should return C when q is greater than or equal to 70, but less than 80', () => {
+        expect(gradeAssignment(71,72,73)).toBe("C");
+        expect(gradeAssignment(75,65,71)).toBe("C");
+        expect(gradeAssignment(70,70,70)).toBe("C");
+    });
+    it('Should return D when q is greater than or equal to 60, but less than 70', () => {
+        expect(gradeAssignment(61,62,63)).toBe("D");
+        expect(gradeAssignment(65,55,61)).toBe("D");
+        expect(gradeAssignment(60,60,60)).toBe("D");
+    });
+    it('Should return F when q is less than 60', () => {
+        expect(gradeAssignment(0,0,0)).toBe("F");
+        expect(gradeAssignment(10,10,10)).toBe("F");
+        expect(gradeAssignment(35,35,35)).toBe("F");
+        expect(gradeAssignment(59,59,59)).toBe("F");
+    });
+    it('Should return an empty string if q does not meet any of the above parameters, e.g. it is not a number', () => {
+        expect(gradeAssignment('a','b','c')).toBe("");
+    });
+});
+
 // Section A 07. Test the disemvowel() function
 
 // Section A 08. Test the removeUrlAnchor() function
