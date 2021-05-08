@@ -1,10 +1,14 @@
 // Not all functions are imported, be careful 👇
 const {
     subtract,
-    divide, 
+    divide,
     isDivisibleBy,
+    areaOrPerimeter,
     gradeAssignment,
-    areaOrPerimeter
+    disemvowel,
+    removeUrlAnchor,
+    strEndsWith,
+    numberToString
 } = require("./section-a.js");
 
 // Section A 01. Wrtite a smoke test
@@ -79,14 +83,32 @@ describe('Testting the isDivisibleBy function', () => {
     it('Should be falsy if the a provided is 0', () => {
         expect(isDivisibleBy(100,0,10)).toBeFalsy();
         expect(isDivisibleBy(8,0,4)).toBeFalsy();
+        expect(isDivisibleBy(0,0,15)).toBeFalsy();
     });
     it('Should be falsy if the b provided is 0', () => {
         expect(isDivisibleBy(100,10,0)).toBeFalsy();
         expect(isDivisibleBy(8,4,0)).toBeFalsy();
+        expect(isDivisibleBy(0,15,0)).toBeFalsy();
+    });
+    it('Should be truthy if the number provided is 0', () => {
+        expect(isDivisibleBy(0,2,5)).toBeTruthy();
     });
 });
 
 // Section A 05. Test the areaOrPerimeter() function
+
+describe('Testing the areaOrPerimeter function', () => {
+    it('Should return the value of l*w if both length and width are the same whole number', () => {
+        expect(areaOrPerimeter(3,3)).toBe(9);
+    });
+    it('Should return the value of l*w if both length and width are the same decimal number', () => {
+        expect(areaOrPerimeter(2.5,2.5)).toBe(6.25);
+    });
+    it('Should return the value of 2*(l+w) when length and width are not equal', () => {
+        expect(areaOrPerimeter(2,3)).toBe(10);
+        expect(areaOrPerimeter(4,3)).toBe(14);
+    });
+});
 
 // Section A 06. Test the gradeAssignment() function
 
