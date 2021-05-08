@@ -167,6 +167,17 @@ describe('Testing the disemvowel function', () => {
 
 // Section A 08. Test the removeUrlAnchor() function
 
+describe('Testing the removeUrlAnchor function', () => {
+    it('Should remove any content from the URL that is an anchor (any part after the # symbol)', () => {
+        expect(removeUrlAnchor('https://www.w3.org/TR/html4/struct/links.html#h-12.2.3')).toBe('https://www.w3.org/TR/html4/struct/links.html');
+    });
+    it('Should not remove anything from a URL that does not contain a # symbol', () => {
+        expect(removeUrlAnchor('https://www.google.co.uk/')).toBe('https://www.google.co.uk/');
+    });
+});
+
 // Section A 09. Test the strEndsWith() function
+
+
 
 // Section A 10. Test the numberToString() function
