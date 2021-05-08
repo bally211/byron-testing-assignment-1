@@ -38,10 +38,15 @@ describe('Testing the subtract fucntion', () => {
 
 describe('Testing the divide function', () => {
     it('Should divide a larger number by a smaller number that will provide a whole answer', () => {
-        expect(divide(4,2)).toEqual(2); //can use to equal as this will provide a whole number answer without decimal points that would break the test
+        expect(divide(4,2)).toEqual(2); //can use toEqual as this will provide a whole number answer without decimal points that would break the test
     });
     it('Should divide a larger number by a smaller number that will provide a decimal answer', () => {
-        expect(divide(10,3)).toBeCloseTo(3.33);
+        expect(divide(10,3)).toBeCloseTo(3.33);//using toBeCloseTo for this as it means that 'weird' JS maths thanks to binary and base 10 not getting along accurately won't cause a right answer to be wrong
+    });
+    it('Should throw an error if the denominator is 0 or is not a number', () => {
+        expect(() => {
+            divide(8,0)
+        }).toThrow(`The value 0 cannot be used as the denominator`);
     });
 });
 
