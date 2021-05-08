@@ -178,6 +178,19 @@ describe('Testing the removeUrlAnchor function', () => {
 
 // Section A 09. Test the strEndsWith() function
 
-
+describe('Testing the strEndsWith function', () => {
+    it('Should be truthy if the string given ends with the parameter given in the same case', () => {
+        expect(strEndsWith('Hello World','World')).toBeTruthy();
+        expect(strEndsWith('Running','ing')).toBeTruthy();
+    });
+    it('Should be falsy if the string given does not end with the parameter given', () => {
+        expect(strEndsWith('Hello World','Hello')).toBeFalsy();
+        expect(strEndsWith('Running','gin')).toBeFalsy();
+    });
+    it('Should be falsy if the string given ends with the parameter given in the wrong case', () => {
+        expect(strEndsWith('Hello World','wORLD')).toBeFalsy();
+        expect(strEndsWith('Running','InG')).toBeFalsy();
+    });
+});
 
 // Section A 10. Test the numberToString() function
