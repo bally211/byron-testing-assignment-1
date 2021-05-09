@@ -194,3 +194,18 @@ describe('Testing the strEndsWith function', () => {
 });
 
 // Section A 10. Test the numberToString() function
+
+describe('Testing the numberToString function', () => {
+    it('Should take an inputted number and output the same value as a string', () => {
+        expect(numberToString(3)).toBe('3');
+        expect(numberToString(-28)).toBe('-28');
+        expect(numberToString(3.141)).toBe('3.141');
+        expect(numberToString(-28.56)).toBe('-28.56');
+    });
+    it('Should return the value as a string', () => {
+        expect(typeof numberToString(3)).toBe('string');
+        expect(typeof numberToString(-28)).toBe('string');
+        expect(typeof numberToString(3.141)).toBe('string');
+        expect(typeof numberToString(-28.56)).toBe('string');
+    });
+});
