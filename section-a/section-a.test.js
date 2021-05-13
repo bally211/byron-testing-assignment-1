@@ -201,6 +201,7 @@ describe('Testing the numberToString function', () => {
         expect(numberToString(-28)).toBe('-28');
         expect(numberToString(3.141)).toBe('3.141');
         expect(numberToString(-28.56)).toBe('-28.56');
+        expect(numberToString(0)).toBe('0');
     });
     it('Should return the value as a string', () => {
         expect(typeof numberToString(3)).toBe('string');

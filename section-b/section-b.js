@@ -41,9 +41,10 @@ function countCharsInString (string) {
     return count;
 }
 
-// Not all functions are exported, be careful 👇
 module.exports = {
     largestValue,
     getEven,
-    houseForSale
+    houseForSale,
+    sortNumbers,
+    countCharsInString
 };
