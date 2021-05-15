@@ -73,3 +73,12 @@ describe('Testing the sortNumbers function', () => {
         expect(sortNumbers([-24.6,-24.6,-123.4])).toEqual([-123.4,-24.6,-24.6]);
     });
 });
+
+describe('Testing the countCharsInString function', () => {
+    it('Should return the number of each discrete character in the string', () => {
+        expect(countCharsInString('Hello')).toStrictEqual({'H': 1, 'e': 1, 'l': 2, 'o': 1});
+        expect(countCharsInString('10')).toStrictEqual({'1': 1, '0': 1});
+        expect(countCharsInString('hHeElLlLoO')).toStrictEqual({'h': 1, 'H': 1, 'e': 1, 'E': 1, 'l': 2, 'L': 2, 'o': 1, 'O': 1});
+        expect(countCharsInString(',;@')).toStrictEqual({'@': 1, ',': 1,';': 1});
+    });
+});
