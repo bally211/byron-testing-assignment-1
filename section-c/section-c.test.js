@@ -1,5 +1,10 @@
 const {mysteryFunction, mysteryFunction2} = require('./section-c');
 
+// Smoke Test
+test('Smoke test to ensure that tests work', () => {
+    expect(3*2).toBe(6);
+});
+
 describe("Test the first Mystery Function", () => {
     it("Returns either true or false", () => {
         expect(mysteryFunction(0)).toBeFalsy();
