@@ -80,5 +80,6 @@ describe('Testing the countCharsInString function', () => {
         expect(countCharsInString('10')).toStrictEqual({'1': 1, '0': 1});
         expect(countCharsInString('hHeElLlLoO')).toStrictEqual({'h': 1, 'H': 1, 'e': 1, 'E': 1, 'l': 2, 'L': 2, 'o': 1, 'O': 1});
         expect(countCharsInString(',;@')).toStrictEqual({'@': 1, ',': 1,';': 1});
+        expect(countCharsInString('')).toStrictEqual({});
     });
 });
