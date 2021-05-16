@@ -26,13 +26,29 @@ describe('Testing the subtract fucntion', () => {
         expect(subtract(2,4)).toBe(-2);
         expect(subtract(7,10)).toBe(-3);
     });
-    it('Should subtract a negative number and provide a the correct answer', () => {
+    it('Should subtract a negative number and provide the correct answer', () => {
         expect(subtract(-2,-4)).toBe(2);
         expect(subtract(7,-10)).toBe(17);
     });
-    it('Should subtract from a positive number from a negative number and give the correct answer', () => {
+    it('Should subtract a positive number from a negative number and give the correct answer', () => {
         expect(subtract(-2,4)).toBe(-6);
         expect(subtract(-7,10)).toBe(-17);
+    });
+    it('Should subtract a smaller decimal number from a larger decimal number and give the correct answer', () => {
+        expect(subtract(4.5,2.3)).toBeCloseTo(2.2);
+        expect(subtract(10.8,7.5)).toBeCloseTo(3.3);
+    });
+    it('Should subtract a larger number from a smaller number and give the correct negative number as an answer', () => {
+        expect(subtract(2.2,4.1)).toBeCloseTo(-1.9);
+        expect(subtract(7.4,10.2)).toBeCloseTo(-2.8);
+    });
+    it('Should subtract a negative number and provide the correct answer', () => {
+        expect(subtract(-2.2,-4.2)).toBeCloseTo(2);
+        expect(subtract(7.5,-10.4)).toBeCloseTo(17.9);
+    });
+    it('Should subtract a positive number from a negative number and give the correct answer', () => {
+        expect(subtract(-2.3,4.2)).toBeCloseTo(-6.5);
+        expect(subtract(-7.8,10.1)).toBeCloseTo(-17.9);
     });
 });
 
@@ -45,10 +61,15 @@ describe('Testing the divide function', () => {
     it('Should divide a larger number by a smaller number that will provide a decimal answer', () => {
         expect(divide(10,3)).toBeCloseTo(3.33);//using toBeCloseTo for this as it means that 'weird' JS maths thanks to binary and base 10 not getting along accurately won't cause a right answer to be wrong
     });
-    it('Should throw an error if the denominator is 0 or is not a number', () => {
+    it('Should throw an error if the denominator is 0', () => {
         expect(() => {
             divide(8,0)
         }).toThrow(`The value 0 cannot be used as the denominator`);
+    });
+    it('Should throw an error if the denominator is not a number', () => {
+        expect(() => {
+            divide(8,'Hello')
+        }).toThrow(`The value Hello cannot be used as the denominator`);
     });
 });
 
@@ -106,7 +127,7 @@ describe('Testing the areaOrPerimeter function', () => {
     });
     it('Should return the value of 2*(l+w) when length and width are not equal', () => {
         expect(areaOrPerimeter(2,3)).toBe(10);
-        expect(areaOrPerimeter(4,3)).toBe(14);
+        expect(areaOrPerimeter(4.5,3.5)).toBeCloseTo(16);
     });
 });
 
@@ -180,11 +201,11 @@ describe('Testing the removeUrlAnchor function', () => {
 
 describe('Testing the strEndsWith function', () => {
     it('Should be truthy if the string given ends with the parameter given in the same case', () => {
-        expect(strEndsWith('Hello World','World')).toBeTruthy();
+        expect(strEndsWith('Hello World','d')).toBeTruthy();
         expect(strEndsWith('Running','ing')).toBeTruthy();
     });
     it('Should be falsy if the string given does not end with the parameter given', () => {
-        expect(strEndsWith('Hello World','Hello')).toBeFalsy();
+        expect(strEndsWith('Hello World','H')).toBeFalsy();
         expect(strEndsWith('Running','gin')).toBeFalsy();
     });
     it('Should be falsy if the string given ends with the parameter given in the wrong case', () => {
